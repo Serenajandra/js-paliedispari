@@ -5,6 +5,7 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
 
+// L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
 const userChoice = prompt("scegli: pari o dispari?")
 console.log (userChoice);
 const userNumber = parseInt(prompt("Ora scegli un numero tra 1 e 5"));
@@ -28,14 +29,20 @@ console.log (randomNumber);
 const sum = randomNumber + userNumber;
 console.log(sum);
 
-// Stabilisco se la somma è pari o dispari
-if(sum % 2){
-    result = "dispari"
-} else{
-    result = "pari"
-}
-console.log(result);
+// Stabilisco se la somma è pari o dispari con una funzione
 
+function pariDispari (sum){
+    if(sum % 2 === 0){
+        result = "pari"
+    } else{
+        result = "dispari"
+    }
+    console.log(result);
+    return result;
+}
+
+pariDispari (sum);
+// Comunico il risultato
 if(userChoice === result){
     alert("Complimenti! hai vinto")
 } else{
